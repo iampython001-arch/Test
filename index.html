@@ -1,1 +1,103 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Clone - Single File</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+        .top {
+            height: 60px;
+            background: #ff0000;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+        .sidebar {
+            width: 200px;
+            background: #f1f1f1;
+            padding: 10px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
+            background: #ddd;
+        }
+        .content {
+            flex: 1;
+            padding: 10px;
+        }
+        .videos a {
+            display: block;
+            margin: 10px 0;
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top">▶ YouTube</div>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Shorts</a>
+        <a href="#">Subscriptions</a>
+        <a href="#">Library</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <!-- Video Player (FRAME) -->
+        <iframe 
+            name="player"
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+        <!-- Video List -->
+        <div class="videos">
+            <h3>Recommended</h3>
+
+            <a href="https://www.youtube.com/embed/9bZkp7q19f0" target="player">
+                ▶ Gangnam Style
+            </a>
+
+            <a href="https://www.youtube.com/embed/l482T0yNkeo" target="player">
+                ▶ Metallica – Enter Sandman
+            </a>
+
+            <a href="https://www.youtube.com/embed/3tmd-ClpJxA" target="player">
+                ▶ Adele – Hello
+            </a>
+
+            <a href="https://www.youtube.com/embed/fJ9rUzIMcZQ" target="player">
+                ▶ Queen – Bohemian Rhapsody
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
