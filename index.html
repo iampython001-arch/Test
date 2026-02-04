@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>YouTube Clone - Single File</title>
+
     <style>
         body {
             margin: 0;
@@ -26,13 +27,18 @@
             background: #f1f1f1;
             padding: 10px;
         }
-        .sidebar a {
+        .sidebar button {
             display: block;
+            width: 100%;
             padding: 10px;
-            text-decoration: none;
-            color: black;
+            margin-bottom: 5px;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .sidebar a:hover {
+        .sidebar button:hover {
             background: #ddd;
         }
         .content {
@@ -45,6 +51,9 @@
             color: blue;
             cursor: pointer;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -56,16 +65,16 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">Shorts</a>
-        <a href="#">Subscriptions</a>
-        <a href="#">Library</a>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('shorts')">Shorts</button>
+        <button onclick="showSection('subs')">Subscriptions</button>
+        <button onclick="showSection('library')">Library</button>
     </div>
 
     <!-- Main Content -->
     <div class="content">
 
-        <!-- Video Player (FRAME) -->
+        <!-- VIDEO PLAYER -->
         <iframe 
             name="player"
             width="100%"
@@ -75,32 +84,54 @@
             allowfullscreen>
         </iframe>
 
-        <!-- Video List -->
-        <div class="videos">
+        <!-- HOME -->
+        <div id="home" class="section">
             <h3>Recommended</h3>
+            <div class="videos">
+                <a href="https://www.youtube.com/embed/9bZkp7q19f0" target="player">▶ Gangnam Style</a>
+                <a href="https://www.youtube.com/embed/l482T0yNkeo" target="player">▶ Metallica – Enter Sandman</a>
+                <a href="https://www.youtube.com/embed/3tmd-ClpJxA" target="player">▶ Adele – Hello</a>
+                <a href="https://www.youtube.com/embed/fJ9rUzIMcZQ" target="player">▶ Queen – Bohemian Rhapsody</a>
+                <a href="https://www.youtube.com/embed/MfY9YO3u7GM" target="player">▶ Brown Rang</a>
+            </div>
+        </div>
 
-            <a href="https://www.youtube.com/embed/9bZkp7q19f0" target="player">
-                ▶ Gangnam Style
-            </a>
+        <!-- SHORTS -->
+        <div id="shorts" class="section hidden">
+            <h3>Shorts</h3>
+            <div class="videos">
+                <a href="https://www.youtube.com/embed/aqz-KE-bpKQ" target="player">▶ Nature Short</a>
+                <a href="https://www.youtube.com/embed/5qap5aO4i9A" target="player">▶ Chill Music</a>
+            </div>
+        </div>
 
-            <a href="https://www.youtube.com/embed/l482T0yNkeo" target="player">
-                ▶ Metallica – Enter Sandman
-            </a>
+        <!-- SUBSCRIPTIONS -->
+        <div id="subs" class="section hidden">
+            <h3>Subscriptions</h3>
+            <div class="videos">
+                <a href="https://www.youtube.com/embed/kJQP7kiw5Fk" target="player">▶ Luis Fonsi</a>
+                <a href="https://www.youtube.com/embed/OPf0YbXqDm0" target="player">▶ Mark Ronson</a>
+            </div>
+        </div>
 
-            <a href="https://www.youtube.com/embed/3tmd-ClpJxA" target="player">
-                ▶ Adele – Hello
-            </a>
-
-            <a href="https://www.youtube.com/embed/fJ9rUzIMcZQ" target="player">
-                ▶ Queen – Bohemian Rhapsody
-            </a>
-            <a href="https://www.youtube.com/embed/MfY9YO3u7GM" target="player">
-                 ▶ Brown Rang 
-            </a>
+        <!-- LIBRARY -->
+        <div id="library" class="section hidden">
+            <h3>Library</h3>
+            <p>📁 Watch Later</p>
+            <p>🕒 History</p>
+            <p>❤️ Liked Videos</p>
         </div>
 
     </div>
 </div>
+
+<script>
+    function showSection(id) {
+        let sections = document.querySelectorAll('.section');
+        sections.forEach(section => section.classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+    }
+</script>
 
 </body>
 </html>
