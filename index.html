@@ -1,136 +1,240 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>YouTube Clone - Single File</title>
+<meta charset="UTF-8" />
+<title>Abhishek Jagapathi | Java Full Stack Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-        }
-        .top {
-            height: 60px;
-            background: #ff0000;
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            font-size: 22px;
-            font-weight: bold;
-        }
-        .container {
-            display: flex;
-            height: calc(100vh - 60px);
-        }
-        .sidebar {
-            width: 200px;
-            background: #f1f1f1;
-            padding: 10px;
-        }
-        .sidebar button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 5px;
-            border: none;
-            background: none;
-            text-align: left;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .sidebar button:hover {
-            background: #ddd;
-        }
-        .content {
-            flex: 1;
-            padding: 10px;
-        }
-        .videos a {
-            display: block;
-            margin: 10px 0;
-            color: blue;
-            cursor: pointer;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+<meta name="description" content="Java Full Stack Developer fresher skilled in Java, SQL, JSP, Servlets, React and backend development. Portfolio of Abhishek Jagapathi.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+header h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+header span {
+  color: var(--accent);
+}
+
+header p {
+  color: var(--muted);
+  margin: 15px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* SECTIONS */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h2 {
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* PROJECT BUTTON */
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.project-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #f3f4f6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  margin: 6px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
-
 <body>
 
-<div class="top">▶ YouTube</div>
+<header class="fade">
+  <h1>Abhishek <span>Jagapathi</span></h1>
+  <p>Java Full Stack Developer | Java • SQL • React • Backend Development</p>
 
-<div class="container">
+  <a class="btn" href="mailto:abhishek6309894486@gmail.com">Email</a>
+  <a class="btn" href="https://github.com/abhi020701" target="_blank">GitHub</a>
+  <a class="btn" href="https://linkedin.com/in/YOURPROFILE" target="_blank">LinkedIn</a>
+  <a class="btn" href="resume.pdf" target="_blank">Resume</a>
+</header>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <button onclick="showSection('home')">Home</button>
-        <button onclick="showSection('shorts')">Shorts</button>
-        <button onclick="showSection('subs')">Subscriptions</button>
-        <button onclick="showSection('library')">Library</button>
-    </div>
+<section class="fade">
+<h2>About Me</h2>
+<div class="card">
+<p>
+Java Full Stack Developer fresher with hands-on experience building 
+database-driven web applications using Java, Servlets, JSP, SQL, and React. 
+Strong interest in backend systems, REST APIs, and scalable web architecture. 
+Passionate about clean coding, problem solving, and continuously learning 
+modern technologies to build production-ready applications.
+</p>
+</div>
+</section>
 
-    <!-- Main Content -->
-    <div class="content">
+<section class="fade">
+<h2>Projects</h2>
 
-        <!-- VIDEO PLAYER -->
-        <iframe 
-            name="player"
-            width="100%"
-            height="400"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
-
-        <!-- HOME -->
-        <div id="home" class="section">
-            <h3>Recommended</h3>
-            <div class="videos">
-                <a href="https://www.youtube.com/embed/9bZkp7q19f0" target="player">▶ Gangnam Style</a>
-                <a href="https://www.youtube.com/embed/l482T0yNkeo" target="player">▶ Metallica – Enter Sandman</a>
-                <a href="https://www.youtube.com/embed/3tmd-ClpJxA" target="player">▶ Adele – Hello</a>
-                <a href="https://www.youtube.com/embed/fJ9rUzIMcZQ" target="player">▶ Queen – Bohemian Rhapsody</a>
-                <a href="https://www.youtube.com/embed/MfY9YO3u7GM" target="player">▶ Brown Rang</a>
-            </div>
-        </div>
-
-        <!-- SHORTS -->
-        <div id="shorts" class="section hidden">
-            <h3>Shorts</h3>
-            <div class="videos">
-                <a href="https://www.youtube.com/embed/aqz-KE-bpKQ" target="player">▶ Nature Short</a>
-                <a href="https://www.youtube.com/embed/5qap5aO4i9A" target="player">▶ Chill Music</a>
-            </div>
-        </div>
-
-        <!-- SUBSCRIPTIONS -->
-        <div id="subs" class="section hidden">
-            <h3>Subscriptions</h3>
-            <div class="videos">
-                <a href="https://www.youtube.com/embed/kJQP7kiw5Fk" target="player">▶ Luis Fonsi</a>
-                <a href="https://www.youtube.com/embed/OPf0YbXqDm0" target="player">▶ Mark Ronson</a>
-            </div>
-        </div>
-
-        <!-- LIBRARY -->
-        <div id="library" class="section hidden">
-            <h3>Library</h3>
-            <p>📁 Watch Later</p>
-            <p>🕒 History</p>
-            <p>❤️ Liked Videos</p>
-        </div>
-
-    </div>
+<div class="card">
+<h3>Student Management System</h3>
+<p><strong>Technologies:</strong> Java, Servlets, JSP, JDBC, MySQL</p>
+<ul>
+<li>Developed full-stack student record management system with CRUD functionality.</li>
+<li>Implemented secure authentication and admin dashboard.</li>
+<li>Designed MVC architecture with optimized SQL queries.</li>
+<li>Integrated JDBC for database connectivity.</li>
+</ul>
+<a class="project-btn" href="https://github.com/abhi020701/student-management-system" target="_blank">View Code</a>
 </div>
 
+<div class="card">
+<h3>Portfolio Website</h3>
+<p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+<ul>
+<li>Responsive personal portfolio website.</li>
+<li>Optimized for recruiter visibility.</li>
+<li>Deployed online for easy access.</li>
+</ul>
+</div>
+
+</section>
+
+<section class="fade">
+<h2>Skills</h2>
+<div class="skills">
+<span>Java</span>
+<span>Spring Boot</span>
+<span>JSP / Servlets</span>
+<span>SQL / MySQL</span>
+<span>React.js</span>
+<span>HTML / CSS</span>
+<span>JavaScript</span>
+<span>Git / GitHub</span>
+<span>REST APIs</span>
+</div>
+</section>
+
+<section class="fade">
+<h2>Contact</h2>
+<div class="card">
+<p><strong>Email:</strong> abhishek6309894486@gmail.com</p>
+<p><strong>Location:</strong> Hyderabad, Telangana</p>
+<p><strong>GitHub:</strong> github.com/abhi020701</p>
+<p><strong>LinkedIn:</strong> linkedin.com/in/YOURPROFILE</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Abhishek Jagapathi | Java Full Stack Developer</p>
+</footer>
+
 <script>
-    function showSection(id) {
-        let sections = document.querySelectorAll('.section');
-        sections.forEach(section => section.classList.add('hidden'));
-        document.getElementById(id).classList.remove('hidden');
+const faders = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
     }
+  });
+});
+
+faders.forEach(el => observer.observe(el));
 </script>
 
 </body>
